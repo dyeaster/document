@@ -171,39 +171,37 @@ $ kafka-console-consumer --bootstrap-server cdh6029:9092,cdh6030:9092,cdh6031:90
    > 192.168.220.142 mint2
    > 192.168.220.143 mint3
 
-   ![image-20211130105431822](C:\Users\crrc\Documents\kafka SASL_SCRAM认证配置.assets\image-20211130105431822.png)
+   ![image-20211130105431822](.\images\image-20211130105431822.png)
 
 2. 安全配置
 
-   ![image-20211130105459568](C:\Users\crrc\Documents\kafka SASL_SCRAM认证配置.assets\image-20211130105459568-16382409048701.png)
+   ![image-20211130105459568](.\images\image-20211130105459568-16382409048701.png)
 
 3. 高级配置
 
-   ![image-20211130105533934](C:\Users\crrc\Documents\kafka SASL_SCRAM认证配置.assets\image-20211130105533934-16382409357092.png)
+   ![image-20211130105533934](.\images\image-20211130105533934-16382409357092.png)
 
 4. jaas属性配置
 
-   ![image-20211130105551099](C:\Users\crrc\Documents\kafka SASL_SCRAM认证配置.assets\image-20211130105551099-16382409530493.png)
+   ![image-20211130105551099](.\images\image-20211130105551099-16382409530493.png)
 
    >org.apache.kafka.common.security.scram.ScramLoginModule required username="admin" password="admin-secret";
 
 5. 连接上kafka集群之后，可以看到权限控制信息，也可以通过工具修改权限
 
-   ![image-20211130105657194](C:\Users\crrc\Documents\kafka SASL_SCRAM认证配置.assets\image-20211130105657194-16382410194454.png)
+   ![image-20211130105657194](.\images\image-20211130105657194-16382410194454.png)
 
    
 
 ### 问题：
 
-1. 需要将server.properties里面的listener监听配置为ip地址，否则本机只能使用localhost访问，ip地址无法访问，外部也访问不到，报无法找到broker
-
-   > ​	
+1. 需要将server.properties里面的listener监听配置为ip地址，否则本机只能使用localhost访问，ip地址无法访问，外部也访问不到，报无法找到broker	
 
    ```properties
-   # 设置 listeners 使用 SASL_PLAINTEXT，依然是不使用 SSL，需要配置为ip地址，否则无法监听外部请求
+# 设置 listeners 使用 SASL_PLAINTEXT，依然是不使用 SSL，需要配置为ip地址，否则无法监听外部请求
    listeners=SASL_PLAINTEXT://192.168.220.144:9092
    ```
-
+   
    
 
 1. 需要在server.properties中配置，鉴权java类，否则acl鉴权无法生效，所有用户均可以访问
@@ -245,7 +243,7 @@ $ kafka-console-consumer --bootstrap-server cdh6029:9092,cdh6030:9092,cdh6031:90
 
 2. 修改super.admin配置，删除默认配置，置空，待会在高级配置中设置super.users
 
-   ![image-20211203120348052](C:\Users\crrc\Documents\kafka SASL_SCRAM认证配置.assets\image-20211203120348052.png)
+   ![image-20211203120348052](.\images\image-20211203120348052.png)
 
 3. 在各个节点服务器中创建kafka_server_jaas.conf文件，放置在/etc/kafka/conf目录下，文件内容如下
 
@@ -294,13 +292,7 @@ $ kafka-console-consumer --bootstrap-server cdh6029:9092,cdh6030:9092,cdh6031:90
 
 6. 重启kafka
 
-7. 
-
-8. 1
-
-9. 1
-
-10. 
+      
 
 ##### kafka-configs操作命令
 
@@ -361,11 +353,7 @@ Completed Updating config for entity: user-principal 'admin'.
    > 	at com.cloudera.kafka.wrap.Kafka.main(Kafka.scala)
    > ```
 
-3. 1
-
-4. 1
-
-5. 
+3. 
 
 #### 其他建议
 

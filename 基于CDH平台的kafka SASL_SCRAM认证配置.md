@@ -171,25 +171,25 @@ $ kafka-console-consumer --bootstrap-server cdh6029:9092,cdh6030:9092,cdh6031:90
    > 192.168.220.142 mint2
    > 192.168.220.143 mint3
 
-   ![image-20211130105431822](.\images\image-20211130105431822.png)
+   ![image-20211130105431822](https://github.com/dyeaster/document/blob/main/images/image-20211130105431822.png)
 
 2. 安全配置
 
-   ![image-20211130105459568](.\images\image-20211130105459568-16382409048701.png)
+   ![image-20211130105459568](https://github.com/dyeaster/document/blob/main/images/image-20211130105459568-16382409048701.png)
 
 3. 高级配置
 
-   ![image-20211130105533934](.\images\image-20211130105533934-16382409357092.png)
+   ![image-20211130105533934](https://github.com/dyeaster/document/blob/main/images/image-20211130105533934-16382409357092.png)
 
 4. jaas属性配置
 
-   ![image-20211130105551099](.\images\image-20211130105551099-16382409530493.png)
+   ![image-20211130105551099](https://github.com/dyeaster/document/blob/main/images/image-20211130105551099-16382409530493.png)
 
    >org.apache.kafka.common.security.scram.ScramLoginModule required username="admin" password="admin-secret";
 
 5. 连接上kafka集群之后，可以看到权限控制信息，也可以通过工具修改权限
 
-   ![image-20211130105657194](.\images\image-20211130105657194-16382410194454.png)
+   ![image-20211130105657194](https://github.com/dyeaster/document/blob/main/images/image-20211130105657194-16382410194454.png)
 
    
 
@@ -243,7 +243,7 @@ $ kafka-console-consumer --bootstrap-server cdh6029:9092,cdh6030:9092,cdh6031:90
 
 2. 修改super.admin配置，删除默认配置，置空，待会在高级配置中设置super.users
 
-   ![image-20211203120348052](.\images\image-20211203120348052.png)
+   ![image-20211203120348052](https://github.com/dyeaster/document/blob/main/images/image-20211203120348052.png)
 
 3. 在各个节点服务器中创建kafka_server_jaas.conf文件，放置在/etc/kafka/conf目录下，文件内容如下
 
